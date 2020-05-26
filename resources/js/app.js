@@ -5,7 +5,7 @@
  */
 
 import Vue from "vue";
-// import { store } from "./store/store";
+import { store } from "./store/store";
 import App from "./App.vue";
 export const eventBus = new Vue();
 
@@ -20,6 +20,6 @@ Vue.component("app", require("./App.vue"));
 new Vue({
     el: "#app",
     component: { App },
-    template: "<app/>"
-    // store: store
+    template: "<app/>",
+    store: store
 });
