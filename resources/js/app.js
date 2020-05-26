@@ -7,18 +7,18 @@
 import Vue from "vue";
 // import { store } from "./store/store";
 import ExampleComponent from "./components/ExampleComponent.vue";
-// import App from "./App.vue";
+import App from "./App.vue";
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component("example-component", require("./components/ExampleComponent"));
+Vue.component("app", require("./App.vue"));
 
 new Vue({
     el: "#app",
-    component: { ExampleComponent },
-    template: "<example-component/>"
+    component: { App },
+    template: "<app/>"
     // store: store
 });
