@@ -91,53 +91,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(9)
-/* script */
-var __vue_script__ = __webpack_require__(10)
-/* template */
-var __vue_template__ = __webpack_require__(11)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/ExampleComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-299e239e", Component.options)
-  } else {
-    hotAPI.reload("data-v-299e239e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 1 */,
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -151,12 +105,11 @@ module.exports = __webpack_require__(12);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventBus", function() { return eventBus; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ExampleComponent_vue__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ExampleComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_ExampleComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__App_vue__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__App_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -166,6 +119,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // import { store } from "./store/store";
 
+var eventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -177,7 +131,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component("app", __webpack_require__
 
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: "#app",
-  component: { App: __WEBPACK_IMPORTED_MODULE_2__App_vue___default.a },
+  component: { App: __WEBPACK_IMPORTED_MODULE_1__App_vue___default.a },
   template: "<app/>"
   // store: store
 });
@@ -12723,78 +12677,8 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-299e239e", module.exports)
-  }
-}
-
-/***/ }),
+/* 10 */,
+/* 11 */,
 /* 12 */
 /***/ (function(module, exports) {
 
@@ -13323,6 +13207,90 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -13334,8 +13302,107 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "todo-list"
+    name: "TodoList",
+    data: function data() {
+        return {
+            newTodo: "",
+            idForTodo: 3,
+            beforeEditCache: "",
+            filter: "all",
+            todos: [{
+                id: 1,
+                title: "Something",
+                completed: false,
+                editing: false
+            }, {
+                id: 2,
+                title: "Take over world",
+                completed: false,
+                editing: false
+            }]
+        };
+    },
+
+    directives: {
+        focus: {
+            inserted: function inserted(el) {
+                el.focus();
+            }
+        }
+    },
+    computed: {
+        remaining: function remaining() {
+            return this.todos.filter(function (todo) {
+                return !todo.completed;
+            }).length;
+        },
+        anyRemaining: function anyRemaining() {
+            return this.remaining != 0;
+        },
+        todosFiltered: function todosFiltered() {
+            if (this.filter == "all") {
+                return this.todos;
+            } else if (this.filter == "active") {
+                return this.todos.filter(function (todo) {
+                    return !todo.completed;
+                });
+            } else if (this.filter == "completed") {
+                return this.todos.filter(function (todo) {
+                    return todo.completed;
+                });
+            }
+            return this.todos;
+        },
+        showClearCompletedButton: function showClearCompletedButton() {
+            return this.todos.filter(function (todo) {
+                return todo.completed;
+            }).length > 0;
+        }
+    },
+    methods: {
+        addTodo: function addTodo() {
+            if (this.newTodo.trim().length == 0) {
+                return;
+            }
+            this.todos.push({
+                id: this.idForTodo,
+                title: this.newTodo,
+                completed: false,
+                editing: false
+            });
+            this.newTodo = "";
+            this.idForTodo++;
+        },
+        editTodo: function editTodo(todo) {
+            this.beforeEditCache = todo.title;
+            todo.editing = true;
+        },
+        doneEdit: function doneEdit(todo) {
+            if (todo.title.trim().length == 0) {
+                todo.title = this.beforeEditCache;
+            }
+            todo.editing = false;
+        },
+        cancelEdit: function cancelEdit(todo) {
+            todo.title = this.beforeEditCache;
+            todo.editing = false;
+        },
+        removeTodo: function removeTodo(index) {
+            this.todos.splice(index, 1);
+        },
+        checkAllTodos: function checkAllTodos() {
+            this.todos.forEach(function (todo) {
+                return todo.completed = event.target.checked;
+            });
+        },
+        clearCompleted: function clearCompleted() {
+            this.todos = this.todos.filter(function (todo) {
+                return !todo.completed;
+            });
+        }
+    }
 });
 
 /***/ }),
@@ -13346,21 +13413,264 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
+  return _c(
+    "div",
+    [
       _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.newTodo,
+            expression: "newTodo"
+          }
+        ],
         staticClass: "todo-input",
-        attrs: { type: "text", placeholder: "What needs to be done" }
-      })
-    ])
-  }
-]
+        attrs: { type: "text", placeholder: "What needs to be done" },
+        domProps: { value: _vm.newTodo },
+        on: {
+          keyup: function($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
+            }
+            return _vm.addTodo($event)
+          },
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.newTodo = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "transition-group",
+        {
+          attrs: {
+            name: "fade",
+            "enter-active-class": "animated fadeInUp",
+            "leave-active-class": "animated fadeOutLeft"
+          }
+        },
+        _vm._l(_vm.todosFiltered, function(todo, index) {
+          return _c("div", { key: todo.id, staticClass: "todo-item" }, [
+            _c("div", { staticClass: "todo-item-left" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: todo.completed,
+                    expression: "todo.completed"
+                  }
+                ],
+                attrs: { type: "checkbox" },
+                domProps: {
+                  checked: Array.isArray(todo.completed)
+                    ? _vm._i(todo.completed, null) > -1
+                    : todo.completed
+                },
+                on: {
+                  change: function($event) {
+                    var $$a = todo.completed,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = null,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 &&
+                          _vm.$set(todo, "completed", $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          _vm.$set(
+                            todo,
+                            "completed",
+                            $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                          )
+                      }
+                    } else {
+                      _vm.$set(todo, "completed", $$c)
+                    }
+                  }
+                }
+              }),
+              _vm._v(" "),
+              !todo.editing
+                ? _c(
+                    "div",
+                    {
+                      staticClass: "todo-item-label",
+                      class: { completed: todo.completed },
+                      on: {
+                        dblclick: function($event) {
+                          return _vm.editTodo(todo)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(todo.title) +
+                          "\n                "
+                      )
+                    ]
+                  )
+                : _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: todo.title,
+                        expression: "todo.title"
+                      },
+                      { name: "focus", rawName: "v-focus" }
+                    ],
+                    staticClass: "todo-item-edit",
+                    attrs: { type: "text" },
+                    domProps: { value: todo.title },
+                    on: {
+                      blur: function($event) {
+                        return _vm.doneEdit(todo)
+                      },
+                      keyup: [
+                        function($event) {
+                          if (
+                            !$event.type.indexOf("key") &&
+                            _vm._k(
+                              $event.keyCode,
+                              "enter",
+                              13,
+                              $event.key,
+                              "Enter"
+                            )
+                          ) {
+                            return null
+                          }
+                          return _vm.doneEdit(todo)
+                        },
+                        function($event) {
+                          if (
+                            !$event.type.indexOf("key") &&
+                            _vm._k($event.keyCode, "esc", 27, $event.key, [
+                              "Esc",
+                              "Escape"
+                            ])
+                          ) {
+                            return null
+                          }
+                          return _vm.cancelEdit(todo)
+                        }
+                      ],
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(todo, "title", $event.target.value)
+                      }
+                    }
+                  })
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "remove-item",
+                on: {
+                  click: function($event) {
+                    return _vm.removeTodo(index)
+                  }
+                }
+              },
+              [_vm._v("\n                ×\n            ")]
+            )
+          ])
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "extra-container" }, [
+        _c("div", [
+          _c("label", [
+            _c("input", {
+              attrs: { type: "checkbox" },
+              domProps: { checked: !_vm.anyRemaining },
+              on: { change: _vm.checkAllTodos }
+            }),
+            _vm._v("\n                Check All\n            ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", [_vm._v(_vm._s(_vm.remaining) + " items left")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "extra-container" }, [
+        _c("div", [
+          _c(
+            "button",
+            {
+              class: { active: _vm.filter == "all" },
+              on: {
+                click: function($event) {
+                  _vm.filter = "all"
+                }
+              }
+            },
+            [_vm._v("\n                All\n            ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              class: { active: _vm.filter == "active" },
+              on: {
+                click: function($event) {
+                  _vm.filter = "active"
+                }
+              }
+            },
+            [_vm._v("\n                Active\n            ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              class: { active: _vm.filter == "completed" },
+              on: {
+                click: function($event) {
+                  _vm.filter = "completed"
+                }
+              }
+            },
+            [_vm._v("\n                Completed\n            ")]
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          [
+            _c("transition", { attrs: { name: "fade" } }, [
+              _vm.showClearCompletedButton
+                ? _c("button", { on: { click: _vm.clearCompleted } }, [
+                    _vm._v(
+                      "\n                    Clear Completed\n                "
+                    )
+                  ])
+                : _vm._e()
+            ])
+          ],
+          1
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -13434,10 +13744,10 @@ if(false) {
 
 exports = module.exports = __webpack_require__(14)(false);
 // imports
-
+exports.push([module.i, "@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css);", ""]);
 
 // module
-exports.push([module.i, "\n.todo-input {\n  width: 100%;\n  padding: 10px 18px;\n  font-size: 18px;\n  margin-bottom: 16px;\n}\n.todo-input:focus {\n    outline: 0;\n}\n.todo-item {\n  margin-bottom: 12px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-animation-duration: 0.3s;\n          animation-duration: 0.3s;\n}\n.remove-item {\n  cursor: pointer;\n  margin-left: 14px;\n}\n.remove-item:hover {\n    color: red;\n}\n.todo-item-left {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.todo-item-label {\n  padding: 10px;\n  border: 1px solid white;\n  margin-left: 12px;\n}\n.todo-item-edit {\n  font-size: 24px;\n  color: #2c3e50;\n  margin-left: 12px;\n  width: 100%;\n  padding: 10px;\n  border: 1px solid #ccc;\n  font-family: \"Aveniz\", Helvetica, Arial, sans-serif;\n}\n.todo-item-edit:focus {\n    outline: none;\n}\n.completed {\n  text-decoration: line-through;\n  color: grey;\n}\n.extra-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  font-size: 16px;\n  border-top: 1px solid lightgray;\n  padding-top: 14px;\n  margin-bottom: 14px;\n}\nbutton {\n  font-size: 14px;\n  background-color: white;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  border: 1px solid lightgray;\n  padding: 4px;\n}\nbutton:hover {\n    background: lightgreen;\n}\nbutton:focus {\n    outline: none;\n}\n.active {\n  background: lightgreen;\n}\n.name-container {\n  margin-bottom: 16px;\n  text-align: center;\n}\n.fade-enter-active,\n.fade-leave-active {\n  -webkit-transition: opacity 0.2s;\n  transition: opacity 0.2s;\n}\n.fade-enter,\n.fade-leave-to {\n  opacity: 0;\n}\n", ""]);
+exports.push([module.i, "\n.todo-input {\n  width: 100%;\n  padding: 10px 18px;\n  font-size: 18px;\n  margin-bottom: 16px;\n}\n.todo-input:focus {\n    outline: 0;\n}\n.todo-item {\n  margin-bottom: 12px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-animation-duration: 0.3s;\n          animation-duration: 0.3s;\n}\n.remove-item {\n  cursor: pointer;\n  margin-left: 14px;\n}\n.remove-item:hover {\n    color: red;\n}\n.todo-item-left {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.todo-item-label {\n  padding: 10px;\n  border: 1px solid white;\n  margin-left: 12px;\n}\n.todo-item-edit {\n  font-size: 24px;\n  color: #2c3e50;\n  margin-left: 12px;\n  width: 100%;\n  padding: 10px;\n  border: 1px solid #ccc;\n  font-family: \"Aveniz\", Helvetica, Arial, sans-serif;\n}\n.todo-item-edit:focus {\n    outline: none;\n}\n.completed {\n  text-decoration: line-through;\n  color: grey;\n}\n.extra-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  font-size: 16px;\n  border-top: 1px solid lightgray;\n  padding-top: 14px;\n  margin-bottom: 14px;\n}\nbutton {\n  font-size: 14px;\n  background-color: white;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  border: 1px solid lightgray;\n}\nbutton:hover {\n    background: lightgreen;\n}\nbutton:focus {\n    outline: none;\n}\n.active {\n  background: lightgreen;\n}\n.fade-enter-active,\n.fade-leave-active {\n  -webkit-transition: opacity 0.2s;\n  transition: opacity 0.2s;\n}\n.fade-enter,\n.fade-leave-to {\n  opacity: 0;\n}\n", ""]);
 
 // exports
 

@@ -6,8 +6,9 @@
 
 import Vue from "vue";
 // import { store } from "./store/store";
-import ExampleComponent from "./components/ExampleComponent.vue";
 import App from "./App.vue";
+export const eventBus = new Vue();
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
