@@ -1,24 +1,9 @@
 <template>
     <div>
-        <input
-            type="text"
-            class="todo-input"
-            placeholder="What needs to be done"
-            v-model="newTodo"
-            @keyup.enter="addTodo"
-        />
-        <transition-group
-            name="fade"
-            enter-active-class="animated fadeInUp"
-            leave-active-class="animated fadeOutLeft"
-        >
-            <todo-item
-                v-for="todo in todosFiltered"
-                :key="todo.id"
-                :todo="todo"
-                :checkAll="!anyRemaining"
-            >
-            </todo-item>
+        <div class="name-container">Welcome, {{ name }}</div>
+        <input type="text" class="todo-input" placeholder="What needs to be done" v-model="newTodo" @keyup.enter="addTodo" />
+        <transition-group name="fade" enter-active-class="animated fadeInUp" leave-active-class="animated fadeOutLeft">
+            <todo-item v-for="todo in todosFiltered" :key="todo.id" :todo="todo" :checkAll="!anyRemaining"> </todo-item>
         </transition-group>
         <div class="extra-container">
             <todo-check-all></todo-check-all>
@@ -36,69 +21,32 @@
 </template>
 
 <script>
-import TodoItem from "./TodoItem";
-import TodoItemsRemaining from "./TodoItemsRemaining";
-import TodoCheckAll from "./TodoCheckAll";
-import TodoFiltered from "./TodoFiltered";
-import TodoClearCompleted from "./TodoClearCompleted";
-import { eventBus } from "../app.js";
+import TodoItem from './TodoItem';
+import TodoItemsRemaining from './TodoItemsRemaining';
+import TodoCheckAll from './TodoCheckAll';
+import TodoFiltered from './TodoFiltered';
+import TodoClearCompleted from './TodoClearCompleted';
+// import { eventBus } from '../app.js';
 export default {
-    name: "TodoList",
-    components: {
-        TodoItem,
-        TodoItemsRemaining,
-        TodoCheckAll,
-        TodoFiltered,
-        TodoClearCompleted
-    },
+    name: 'TodoList',
+    components: { TodoItem, TodoItemsRemaining, TodoCheckAll, TodoFiltered, TodoClearCompleted },
     data() {
         return {
-            newTodo: "",
+            newTodo: '',
             idForTodo: 3,
-            beforeEditCache: "",
-            filter: "all",
-            todos: [
-                {
-                    id: 1,
-                    title: "Something",
-                    completed: false,
-                    editing: false
-                },
-                {
-                    id: 2,
-                    title: "Take over world",
-                    completed: false,
-                    editing: false
-                }
-            ]
+            name: ''
         };
     },
     created() {
-        // eventBus.$on('removedTodo', (id) => this.removeTodo(id));
-        // eventBus.$on('finishedEdit', (data) => this.finishedEdit(data));
-        // eventBus.$on('checkAllChanged', (checked) => this.checkAllTodos(checked));
-        // eventBus.$on('filterChanged', (filter) => (this.$store.state.filter = filter));
-        eventBus.$on("clearCompletedTodos", () => this.clearCompleted());
-    },
-    beforeDestroy() {
-        // eventBus.$off('removedTodo', (id) => this.removeTodo(id));
-        // eventBus.$off('finishedEdit', (data) => this.finishedEdit(data));
-        // eventBus.$off('checkAllChanged', (checked) => this.checkAllTodos(checked));
-        // eventBus.$off('filterChanged', (filter) => (this.$store.state.filter = filter));
-        eventBus.$off("clearCompletedTodos", () => this.clearCompleted());
+        this.$store.dispatch('retrieveTodos');
+        this.$store.dispatch('retrieveName').then((res) => (this.name = res.data.name));
     },
     computed: {
-        remaining() {
-            return this.$store.getters.remaining;
-        },
         anyRemaining() {
             return this.$store.getters.anyRemaining;
         },
         todosFiltered() {
             return this.$store.getters.todosFiltered;
-        },
-        showClearCompletedButton() {
-            return this.$store.getters.showClearCompletedButton;
         }
     },
     methods: {
@@ -106,36 +54,21 @@ export default {
             if (this.newTodo.trim().length == 0) {
                 return;
             }
-            this.$store.state.todos.push({
+            // call mutation
+            this.$store.dispatch('addTodo', {
                 id: this.idForTodo,
-                title: this.newTodo,
-                completed: false,
-                editing: false
+                title: this.newTodo
             });
-            this.newTodo = "";
+            this.newTodo = '';
             this.idForTodo++;
         }
-        // removeTodo(id) {
-        //     const index = this.$store.state.todos.findIndex((item) => item.id == id);
-        //     this.$store.state.todos.splice(index, 1);
-        // },
-        // checkAllTodos() {
-        //     this.$store.state.todos.forEach((todo) => (todo.completed = event.target.checked));
-        // },
-        // clearCompleted() {
-        //     this.$store.state.todos = this.$store.state.todos.filter((todo) => !todo.completed);
-        // }
-        // finishedEdit(data) {
-        //     const index = this.$store.state.todos.findIndex((item) => item.id == data.id);
-        //     this.$store.state.todos.splice(index, 1, data);
-        // }
     }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 .todo-input {
     width: 100%;
     padding: 10px 18px;
@@ -177,7 +110,7 @@ export default {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    font-family: "Aveniz", Helvetica, Arial, sans-serif;
+    font-family: 'Aveniz', Helvetica, Arial, sans-serif;
     &:focus {
         outline: none;
     }
@@ -202,6 +135,7 @@ button {
     background-color: white;
     appearance: none;
     border: 1px solid lightgray;
+    padding: 4px;
 
     &:hover {
         background: lightgreen;
@@ -212,6 +146,10 @@ button {
 }
 .active {
     background: lightgreen;
+}
+.name-container {
+    margin-bottom: 16px;
+    text-align: center;
 }
 
 // CSS Transition

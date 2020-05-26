@@ -1,6 +1,6 @@
 <template>
     <div id="app" class="container">
-        <img class="logo" alt="Vue logo" src="/logo.png" />
+        <img class="logo" alt="Vue logo" src="logo.png" />
         <todo-list></todo-list>
     </div>
 </template>
