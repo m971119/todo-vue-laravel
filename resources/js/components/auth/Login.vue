@@ -1,6 +1,7 @@
 <template>
-    <div class="login-form">
+    <div class="page-wrapper login-form">
         <h2 class="login-heading">Login</h2>
+        <div v-if="serverError" class="server-error">{{ serverError }}</div>
         <form action="#" @submit.prevent="login">
             <div class="form-control">
                 <label for="email">Username/Email</label>
@@ -25,7 +26,17 @@
             </div>
 
             <div class="form-control">
-                <button type="submit" class="btn-submit">Login</button>
+                <button type="submit" class="btn-submit" :disabled="loading">
+                    <div class="lds-ring-container" v-if="loading">
+                        <div class="lds-ring">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    Login
+                </button>
             </div>
         </form>
     </div>
@@ -37,18 +48,27 @@ export default {
     data() {
         return {
             username: "",
-            password: ""
+            password: "",
+            serverError: "",
+            loading: false
         };
     },
     methods: {
         login() {
+            this.loading = true;
             this.$store
                 .dispatch("retrieveToken", {
                     username: this.username,
                     password: this.password
                 })
                 .then(() => {
+                    this.loading = false;
                     this.$router.push({ name: "todo" });
+                })
+                .catch(err => {
+                    this.loading = false;
+                    this.serverError = err.response.data;
+                    this.password = "";
                 });
         }
     }

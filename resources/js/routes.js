@@ -1,6 +1,5 @@
 import App from "./App.vue";
 import LandingPage from "./components/marketing/LandingPage";
-import About from "./components/marketing/About";
 import Login from "./components/auth/Login";
 import Logout from "./components/auth/Logout";
 import Register from "./components/auth/Register";
@@ -18,11 +17,6 @@ const routes = [
         meta: {
             requiresAuth: true
         }
-    },
-    {
-        path: "/about",
-        name: "about",
-        component: About
     },
     {
         path: "/login",

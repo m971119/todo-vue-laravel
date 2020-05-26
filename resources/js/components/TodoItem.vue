@@ -2,10 +2,24 @@
     <div class="todo-item">
         <div class="todo-item-left">
             <input type="checkbox" v-model="completed" @change="doneEdit" />
-            <div v-if="!editing" @dblclick="editTodo" class="todo-item-label" :class="{ completed: completed }">
+            <div
+                v-if="!editing"
+                @dblclick="editTodo"
+                class="todo-item-label"
+                :class="{ completed: completed }"
+            >
                 {{ title }}
             </div>
-            <input v-else class="todo-item-edit" type="text" v-model="title" v-focus @blur="doneEdit" @keyup.enter="doneEdit" @keyup.esc="cancelEdit" />
+            <input
+                v-else
+                class="todo-item-edit"
+                type="text"
+                v-model="title"
+                v-focus
+                @blur="doneEdit"
+                @keyup.enter="doneEdit"
+                @keyup.esc="cancelEdit"
+            />
         </div>
         <div>
             <button @click="pluralize">Plural</button>
@@ -17,9 +31,9 @@
 </template>
 
 <script>
-import { eventBus } from '../app.js';
+import { eventBus } from "../app.js";
 export default {
-    name: 'todo-item',
+    name: "todo-item",
     directives: {
         focus: {
             inserted: function(el) {
@@ -38,10 +52,10 @@ export default {
         }
     },
     created() {
-        eventBus.$on('pluralize', this.handlePluralize);
+        eventBus.$on("pluralize", this.handlePluralize);
     },
     beforeDestroy() {
-        eventBus.$off('pluralize', this.handlePluralize);
+        eventBus.$off("pluralize", this.handlePluralize);
     },
     watch: {
         checkAll() {
@@ -54,12 +68,12 @@ export default {
             title: this.todo.title,
             completed: this.todo.completed,
             editing: this.todo.editing,
-            beforeEditCache: ''
+            beforeEditCache: ""
         };
     },
     methods: {
         removeTodo(id) {
-            this.$store.dispatch('deleteTodo', id);
+            this.$store.dispatch("deleteTodo", id);
         },
         editTodo() {
             this.beforeEditCache = this.title;
@@ -70,7 +84,7 @@ export default {
                 this.title = this.beforeEditCache;
             }
             this.editing = false;
-            this.$store.dispatch('updateTodo', {
+            this.$store.dispatch("updateTodo", {
                 id: this.id,
                 title: this.title,
                 completed: this.completed,
@@ -82,11 +96,11 @@ export default {
             this.editing = false;
         },
         pluralize() {
-            eventBus.$emit('pluralize');
+            eventBus.$emit("pluralize");
         },
         handlePluralize() {
-            this.title = this.title + 's';
-            this.$store.dispatch('updateTodo', {
+            this.title = this.title + "s";
+            this.$store.dispatch("updateTodo", {
                 id: this.id,
                 title: this.title,
                 completed: this.completed,
@@ -96,5 +110,3 @@ export default {
     }
 };
 </script>
-
-<style scoped></style>
